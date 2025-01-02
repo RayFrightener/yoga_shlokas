@@ -1,14 +1,40 @@
+.cardContainer {
+  display: flex;
+  flex-direction: column; /* Stack cards vertically */
+  align-items: center; /* Center cards horizontally */
+  gap: 20px; /* Space between the cards */
+  padding: 20px; /* Optional: Add padding around the container */
+}
+
 .card {
+  border: 2px solid #ccc;
+  border-radius: 10px; /* Soft edges */
+  padding: 20px;
+  width: 500px; /* Adjust the width of the card */
+  text-align: center;
 }
 
 .card h1 {
+  margin-bottom: 20px;
 }
 
 .card .content {
+  height: 120px; /* Enough space for 4-5 lines */
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
 }
 
 .card .buttons {
+  display: flex;
+  justify-content: center; /* Centers the buttons horizontally */
+  gap: 10px; /* Space between the buttons */
 }
 
 .card button {
+  flex: 1; /* Makes the buttons take up equal space */
+  max-width: 100px; /* Limits the maximum width of the buttons */
+  padding: 5px 10px;
+  font-size: 14px;
 }
