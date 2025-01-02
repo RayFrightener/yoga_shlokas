@@ -1,9 +1,14 @@
 .cardContainer {
-  display: flex;
-  flex-direction: column; /* Stack cards vertically */
-  align-items: center; /* Center cards horizontally */
-  gap: 20px; /* Space between the cards */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two columns of equal width */
+  gap: 10px; /* Space between the cards */
   padding: 20px; /* Optional: Add padding around the container */
+  justify-items: center; /* Center items horizontally */
+}
+
+.cardContainer > div:nth-child(3) {
+  grid-column: span 2; /* Make the third card span two columns */
+  justify-self: center; /* Center the third card */
 }
 
 .card {
