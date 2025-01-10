@@ -26,26 +26,34 @@ const inputFilePath = path.join(__dirname, 'dataset_english.json');
 const outputFilePath = path.json(__dirname, 'ch_3,4,12English.json');
 
 const extractedVerses = () => {
-/*  read the input json file
-    the fsread file method takes in 3 arguments, 
-    the file path, the encoding, and a callback function
+/* step 1 read file
+   step 2 parse the json data to js object
+   step 3 extract the required verses
+   step 4 create an object to hold the extracted verses
+   step 5 write the extracted verses to the output json file
+*/
+/*  Step 1
+    the fs.readFile() method is a method used to read a file 
+    that takes in 3 arguments, 
+    1. the file path 2. the encodin and 3. A callback function
     the callback function takes two parameters
     err and data, if while reading the file any error is raised
     the err contains that, if not the variable data
     contains the data 
 */
-//step 1 read file
 fs.readFile(inputFilePath, 'utf-8', (err, data) => {
   if(err) {
     console.error('Error reading the file:', err);
-    return;
+    return; 
   }
-//step 2 parse the json data
-  const jsonData = JSON.parse(data);
-
-//extract the required verses
-  const extractedVerses = chsToBeExtracted.map(chapter => jsonData.verses[chapter]);
-
+  
 })
+// step 2 parse the json data
+
+
+// step 3 extract the required verses
+
+
+
 }
 
