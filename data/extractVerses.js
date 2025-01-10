@@ -23,7 +23,7 @@ const chsToBeExtracted = [3,4,12];
 const inputFilePath = path.join(__dirname, 'dataset_english.json');
 
 //path to output json file
-const outputFilePath = path.json(__dirname, 'ch_3,4,12English.json');
+const outputFilePath = path.join(__dirname, 'ch_3,4,12English.json');
 
 const extractedVerses = () => {
 /* step 1 read file
@@ -46,14 +46,30 @@ fs.readFile(inputFilePath, 'utf-8', (err, data) => {
     console.error('Error reading the file:', err);
     return; 
   }
-  
-})
 // step 2 parse the json data
-
+const parsedData = JSON.parse(data);
 
 // step 3 extract the required verses
 
+const extractedVerses = {};
+chsToBeExtracted.forEach(chapter => {
+  extractedVerses[chapter] = parsedData.verses[chapter];
+})
 
+// step 4 create an object to hold the extracted verses
+const verses = {
+  verses : extractedVerses
+};
 
+// step 5 write the extracted verses to the output json file
+fs.writeFile(outputFilePath, JSON.stringify(verses, null, 2), 'utf-8', err => {
+  if(err){ 
+    console.error('Error writing the output file:', err);
+    return;
+  }
+  console.log('Extracted verses have been written to', outputFilePath);
+  });
+  });
 }
-
+// run the lovely function
+extractedVerses();
