@@ -8,7 +8,7 @@ export default async function handler(req, res) {
     const db = client.db('bhagavadgita_shlokas');
     
     // Fetch the entire document
-    const versesDocument = await db.collection('verses').find({}).toArray();
+    const versesDocument = await db.collection('englishVerses').find({}).toArray();
 
     // Check if the document is found
     if (!versesDocument) {

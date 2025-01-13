@@ -15,9 +15,9 @@ const Cards = () => {
         console.log('Fetched document:', data); // Log the fetched document
         setVersesDocument(data);
         // Filter the chapter object from the fetched document
-        const chapter3 = data.find(doc => doc.chapter === 3);
+        const chapter3 = data.find(doc => doc['3']);
         if (chapter3) {
-          const chapter3Verses = Object.values(chapter3.verses);
+          const chapter3Verses = Object.values(chapter3['3']);
           setVerses(chapter3Verses);
           console.log('Updated verses state:', chapter3Verses); // Log the updated state
         } else {
@@ -39,6 +39,10 @@ const Cards = () => {
     setCurrentVerseIndex((prevIndex) => Math.min(prevIndex + 1, verses.length - 1));
   };
 
+  const handleIndexReset = () => {
+    setCurrentVerseIndex(0);
+  };
+
   const currentVerse = verses[currentVerseIndex] || {};
 
   return (
@@ -53,6 +57,7 @@ const Cards = () => {
         }
         onPrevious={handlePrevious}
         onNext={handleNext}
+        onReset={handleIndexReset}
       />
       <CardDefined title="Gyaan Yoga" content="Shlokas will be displayed here"/>
       <CardDefined title="Bhakti Yoga" content="Shlokas will be displayed here"/>
