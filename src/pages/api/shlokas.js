@@ -21,7 +21,7 @@ export default async function handler(req, res) {
     // Send the document as a JSON response
     res.status(200).json(versesDocument);
   } catch (e) {
-    console.error(e);
+    console.error('Error fetching document:', e);
     res.status(500).json({ message: 'Internal Server Error' });
   }
 }
