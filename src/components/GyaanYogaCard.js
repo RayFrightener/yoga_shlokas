@@ -6,7 +6,7 @@ const GyaanYogaCard = ({ verses, currentVerseIndex, onPrevious, onNext, onReset 
 
   return (
     <div className={styles.card}>
-      <h1>Gyaan Yoga</h1>
+      <h1>Jnana Yoga</h1>
       <div className={styles.content}>
         <p>{currentVerse.text}</p>
         <p>{currentVerse.meaning}</p>
