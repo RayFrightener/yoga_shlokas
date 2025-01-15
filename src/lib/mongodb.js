@@ -14,17 +14,6 @@ const client = new MongoClient(uri, {
   }
 });
 
-let clientPromise;
-
-if (process.env.NODE_ENV === 'development') {
-  //In development mode, use global variable to preserve the client across module reloads
-  if (!global._mongoClientPromise) {
-    global._mongoClientPromise = client.connect();
-  }
-  clientPromise = global._mongoClientPromise;
-} else {
-  // In production mode, its best to not use a global variable 
-  clientPromise = client.connect();
-}
+const clientPromise = client.connect();
 
 module.exports = clientPromise;

@@ -18,7 +18,9 @@ const Cards = () => {
     const fetchVersesDocument = async () => {
       try {
         const res = await fetch('/api/shlokas');
-        const data = await res.json();
+        const text = await res.text();
+        console.log('API response:', text);
+        const data = JSON.parse(text);
         setVersesDocument(data);
         
         // Filter the chapter object from the fetched document
@@ -32,7 +34,7 @@ const Cards = () => {
 
         const chapter4 = data.find(doc => doc['4']);
         if(chapter4) {
-          const chapter4Verses = Object.values(chapter3['3']);
+          const chapter4Verses = Object.values(chapter4['4']);
           setCh4Verses(chapter4Verses);
         } else {
           console.error('Chapter 4 not found');
@@ -51,7 +53,7 @@ const Cards = () => {
     };
 
     fetchVersesDocument();
-  }, []);   
+  }, []);    
 
 
   const handlePreviousKarma = () => {

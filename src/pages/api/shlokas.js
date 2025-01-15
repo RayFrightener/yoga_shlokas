@@ -15,6 +15,9 @@ export default async function handler(req, res) {
       return res.status(404).json({ message: 'Document not found' });
     }
 
+    // Log the document to check its structure
+    console.log('Fetched document:', versesDocument);
+
     // Send the document as a JSON response
     res.status(200).json(versesDocument);
   } catch (e) {
