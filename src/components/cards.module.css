@@ -24,7 +24,7 @@
 }
 
 .card .content {
-  height: 135px; /* Enough space for 4-5 lines */
+  height: 150px; /* Enough space for 4-5 lines */
   margin-bottom: 20px;
   padding: 10px;
   border: 1px solid #ddd;
