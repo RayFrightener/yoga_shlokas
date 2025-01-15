@@ -15,8 +15,12 @@
   border: 2px solid #ccc;
   border-radius: 10px; /* Soft edges */
   padding: 20px;
-  width: 500px; /* Adjust the width of the card */
+  width: 100%;
+  max-width: 450px; /* Adjust the width of the card */
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .card h1 {
@@ -24,11 +28,16 @@
 }
 
 .card .content {
-  height: 150px; /* Enough space for 4-5 lines */
   margin-bottom: 20px;
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 5px;
+  overflow-y: auto; /* Add vertical scroll if content is too large */
+  text-overflow: ellipsis;
+  white-space: pre-wrap; /* Preserve whitespace and wrap text */
+  word-wrap: break-word; /* Break long words */
+  height: 175px; /* Set a fixed height */
+  max-width: 100%; /* Ensure it doesn't overflow horizontally */
 }
 
 .card .buttons {
@@ -42,4 +51,19 @@
   max-width: 100px; /* Limits the maximum width of the buttons */
   padding: 5px 10px;
   font-size: 14px;
+}
+
+/* Media query for mobile devices */
+@media (max-width: 1045) {
+  .cardContainer {
+    grid-template-columns: 1fr; /* Single column layout */
+  }
+
+  .card {
+    width: 100%; /* Full width on mobile */
+  }
+
+  .cardContainer > div:nth-child(3) {
+    grid-column: span 1; /* Single column layout */
+  }
 }

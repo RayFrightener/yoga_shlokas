@@ -53,6 +53,7 @@ const Cards = () => {
     fetchVersesDocument();
   }, []);   
 
+
   const handlePreviousKarma = () => {
     setKarmaIndex((prevIndex) => Math.max(prevIndex - 1, 0));
   };
@@ -81,7 +82,7 @@ const Cards = () => {
     setBhaktiIndex((prevIndex) => Math.max(prevIndex - 1, 0));
   }
 
-    const handleNextBhakti = () => {
+  const handleNextBhakti = () => {
     setBhaktiIndex((prevIndex) => Math.min(prevIndex + 1, ch12Verses.length - 1));
   }
 

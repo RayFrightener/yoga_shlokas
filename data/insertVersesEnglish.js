@@ -1,7 +1,7 @@
 const fs = require('fs');
 
 // Select the database to use.
-use('bhagavadgita_shlokas');
+// use('bhagavadgita_shlokas');
 
 const rawData = fs.readFileSync('/home/magician/repos/yoga_shlokas/data/ch_3,4,12English.json', 'utf-8');
 const data = JSON.parse(rawData);

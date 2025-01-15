@@ -1,0 +1,19 @@
+.contextContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  margin: 0 auto;
+  max-width: 100%;
+  flex-wrap: wrap;
+}
+
+.context {
+  font-size: 1.2em;
+  font-style: italic;
+  line-height: 1.6;
+  color: #333;
+  margin: 10px;
+}
