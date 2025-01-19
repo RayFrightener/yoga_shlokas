@@ -32,7 +32,7 @@ const Cards = () => {
 
         const chapter4 = data.find(doc => doc['4']);
         if(chapter4) {
-          const chapter4Verses = Object.values(chapter3['3']);
+          const chapter4Verses = Object.values(chapter4['4']);
           setCh4Verses(chapter4Verses);
         } else {
           console.error('Chapter 4 not found');
