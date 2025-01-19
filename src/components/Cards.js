@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import KarmaYogaCard from './KarmaYogaCard';
 import GyaanYogaCard from './GyaanYogaCard';
 import BhaktiYogaCard from './BhaktiYogaCard';
-import styles from './cards.module.css';
+import styles from '@components/cards.module.css'; // Updated import
 import { Karma } from 'next/font/google';
 
 const Cards = () => {

@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './context.module.css';
+import styles from '@components/context.module.css'; // Updated import
 
 const Context = () => {
   return (
