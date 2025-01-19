@@ -54,7 +54,7 @@
 }
 
 /* Media query for mobile devices */
-@media (max-width: 1045) {
+@media (max-width: 1045px) {
   .cardContainer {
     grid-template-columns: 1fr; /* Single column layout */
   }
