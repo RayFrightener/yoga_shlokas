@@ -22,6 +22,6 @@ export default async function handler(req, res) {
     res.status(200).json(versesDocument);
   } catch (e) {
     console.error('Error fetching document:', e);
-    res.status(500).json({ message: 'Internal Server Error' });
+    res.status(500).json({ message: 'Internal Server Error', error: e.message });
   }
 }
